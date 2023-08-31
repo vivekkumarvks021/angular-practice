@@ -1,0 +1,22 @@
+<p>Template Form Example</p>
+<input
+  type="text"
+  name="firstName"
+  [(ngModel)]="firstName"
+  placeholder="First Name"
+/>
+<input
+  type="text"
+  name="lastName"
+  [(ngModel)]="lastName"
+  placeholder="Last Name"
+/>
+<button type="submit" (click)="submit()">Submit</button>
+
+<button (click)="createForm()">Create Form</button>
+<form [formGroup]="empForm">
+  {{ empForm?.get("empName") }}
+  <mat-form-field>
+    <input matInput formControlName="empName" />
+  </mat-form-field>
+</form>
